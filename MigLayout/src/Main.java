@@ -12,9 +12,6 @@ import javax.swing.JTextArea;
 
 import net.miginfocom.swing.MigLayout;
 
-
-
-
 public class Main {
 
 	/**
@@ -84,6 +81,9 @@ public class Main {
 		frame.add(parentContainer,BorderLayout.CENTER);
 		frame.pack();
 		frame.setVisible(true);
+		
+		Translator translator = new Translator();
+		String result = translator.translate("en", "es", "Hello%20World!");
 	}
 
 }
