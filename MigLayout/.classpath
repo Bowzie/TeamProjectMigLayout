@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Bowzie/Downloads/miglayout-4.0-swing.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Bowzie/Downloads/microsoft-translator-java-api-0.6.2-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="../MigLayout/miglayout-4.0-swing.jar"/>
+	<classpathentry kind="lib" path="../MigLayout/microsoft-translator-java-api-0.6.2-jar-with-dependencies.jar"></classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
