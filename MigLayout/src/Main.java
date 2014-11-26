@@ -12,9 +12,6 @@ import javax.swing.JTextArea;
 
 import net.miginfocom.swing.MigLayout;
 
-
-
-
 public class Main {
 
 	/**
@@ -50,6 +47,8 @@ public class Main {
 		frame.add(parentContainer);
 		parentContainer.setLayout(new MigLayout("debug","[] []"," [] [] []"));
 		
+		//radio buttons need to be closer
+		//Remove checkbox
 		panel.add(Russianbutton);
 		panel.add(Swedishbutton);
 		panel.add(Finnishbutton ,"wrap");
@@ -84,6 +83,15 @@ public class Main {
 		frame.add(parentContainer,BorderLayout.CENTER);
 		frame.pack();
 		frame.setVisible(true);
+		
+//		Example
+//		Translator translator = new Translator();
+//		String result = translator.Translate("en", "es", "Hello World");
+//		System.out.println(result);
+		
+		//TODO create action listener for translate button
+		//When pressed, get text from textArea, call translator.Translate function for each language (radio button)
+		//Output translated language to bottom textArea
 	}
 
 }
