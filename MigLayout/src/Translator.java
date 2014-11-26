@@ -28,6 +28,7 @@ public class Translator {
     }
 	
 	public Language getLanguage(String lang) {
+		//TODO add other languages
 		switch(lang){
 		case "en":
 			return Language.ENGLISH;
