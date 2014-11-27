@@ -36,6 +36,8 @@ public class Translator {
 			return Language.FRENCH;
 		case "es":
 			return Language.SPANISH;
+		case "ru":
+			return Language.RUSSIAN;	
 		}
 		return Language.AUTO_DETECT;
 	}
