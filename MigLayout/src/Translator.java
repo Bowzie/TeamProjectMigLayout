@@ -37,7 +37,20 @@ public class Translator {
 		case "es":
 			return Language.SPANISH;
 		case "ru":
-			return Language.RUSSIAN;	
+			return Language.RUSSIAN;
+		case "sw":
+			return Language.SWEDISH;
+		case "fn":
+			return Language.FINNISH;
+		case "gr":
+			return Language.GERMAN;
+		case "ch":
+			return Language.CHINESE;
+		case "hi":
+			return Language.HINDI;
+		case "is":
+			return Language.IRISH;
+			
 		}
 		return Language.AUTO_DETECT;
 	}
