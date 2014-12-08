@@ -40,7 +40,6 @@ public class Main {
 		final JRadioButton Germanbutton = new JRadioButton("German");
 		final JRadioButton Chinesebutton = new JRadioButton("Chinese");
 		final JRadioButton Hindubutton = new JRadioButton("Hindu");
-		final JRadioButton Italianbutton = new JRadioButton("Italian");
 		final JRadioButton Frenchbutton = new JRadioButton("French");
 		JCheckBox checkbox = new JCheckBox("Random order of translation");
 		JPanel parentContainer = new JPanel();
@@ -55,7 +54,6 @@ public class Main {
 		panel.add(Germanbutton);
 		panel.add(Chinesebutton);
 		panel.add(Hindubutton,"wrap");
-		panel.add(Italianbutton);
 		panel.add(Frenchbutton,"wrap");
 		panel.add(checkbox,"wrap");
 		button.setSize(30, 30);
@@ -78,36 +76,36 @@ public class Main {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				Translator translator = new Translator();
+				String result = input.getText();
+				String currentLanguage = "en";
 				if(Spanishbutton.isSelected()){
-					String result = translator.Translate(Language.ENGLISH.toString(), Language.SPANISH.toString(), input.getText());
-					output.setText(result);
+					result = translator.Translate(currentLanguage, "es", result);
+					currentLanguage = "es";
 				}else if(Swedishbutton.isSelected()){
-					String result = translator.Translate(Language.ENGLISH.toString(), Language.SWEDISH.toString(), input.getText());
-					output.setText(result);
+					result = translator.Translate(currentLanguage, "es", result);
+					currentLanguage = "sw";
 				}else if(Finnishbutton.isSelected()){
-					String result = translator.Translate(Language.ENGLISH.toString(), Language.FINNISH.toString(), input.getText());
-					output.setText(result);
+					result = translator.Translate(currentLanguage, "sw", result);
+					currentLanguage = "fn";
 				}else if(Germanbutton.isSelected()){
-					String result = translator.Translate(Language.ENGLISH.toString(), Language.GERMAN.toString(), input.getText());
-					output.setText(result);
+					result = translator.Translate(currentLanguage, "gr", result);
+					currentLanguage = "gr";
 				}else if(Chinesebutton.isSelected()){
-					String result = translator.Translate(Language.ENGLISH.toString(), Language.CHINESE_SIMPLIFIED.toString(), input.getText());
-					output.setText(result);
+					result = translator.Translate(currentLanguage, "ch", result);
+					currentLanguage = "ch";
 				}else if(Hindubutton.isSelected()){
-					String result = translator.Translate(Language.ENGLISH.toString(), Language.HINDI.toString(), input.getText());
-					output.setText(result);
+					result = translator.Translate(currentLanguage, "hi", result);
+					currentLanguage = "hi";
 				}else if(Italianbutton.isSelected()){
-					String result = translator.Translate(Language.ENGLISH.toString(), Language.ITALIAN.toString(), input.getText());
-					output.setText(result);
+					result = translator.Translate(currentLanguage, "it", result);
 				}else if(Frenchbutton.isSelected()){
-					String result = translator.Translate(Language.ENGLISH.toString(), Language.FRENCH.toString(), input.getText());
-					output.setText(result);
+					result = translator.Translate(currentLanguage, "fr", result);
+					currentLanguage = "fr";
 				}
+				result = translator.Translate(currentLanguage, "en", result);
+				output.setText(result);
 			}
 		});
-		
-		//TODO LANGUAGES SPANISH AND FRENCH WORK. LANGUAGE CODES FOR OTHERS DONT WORK
-		//Jazus lads ye did great work there. I must get my finger out...
 	}
 
 }
