@@ -1,7 +1,7 @@
 import java.awt.BorderLayout;
-import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -9,37 +9,39 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
+import javax.swing.UIManager;
 
+import com.memetix.mst.language.Language;
 import net.miginfocom.swing.MigLayout;
 
 public class Main {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		
+		try
+		 {
+			 UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+		 }catch(Exception e){}
+		System.out.println("Testing git");
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setLocation(400, 400);
+		frame.setLocation(200, 200);
 		
 		JButton button = new JButton("Translate");
 		JLabel label1 = new JLabel("Input your text here");
 		JLabel label2 = new JLabel("Languagues to translate through");
 		JLabel label3 = new JLabel("Your text translated through your selected languages back into English");
-		JTextArea input = new JTextArea(20,60);
-		JTextArea output = new JTextArea(10,60);
+		final JTextArea input = new JTextArea(20,60);
+		final JTextArea output = new JTextArea(10,60);
 		
-		JRadioButton Russianbutton = new JRadioButton("Russian");
-		JRadioButton Swedishbutton = new JRadioButton("Swedish");
-		JRadioButton Finnishbutton = new JRadioButton("Finnish");
-		JRadioButton Germanbutton = new JRadioButton("German");
-		JRadioButton Chinesebutton = new JRadioButton("Chinese");
-		JRadioButton Hindubutton = new JRadioButton("Hindu");
-		JRadioButton Irishbutton = new JRadioButton("Irish");
-		JRadioButton Frenchbutton = new JRadioButton("French");
+		final JRadioButton Spanishbutton = new JRadioButton("Spanish");
+		final JRadioButton Swedishbutton = new JRadioButton("Swedish");
+		final JRadioButton Finnishbutton = new JRadioButton("Finnish");
+		final JRadioButton Germanbutton = new JRadioButton("German");
+		final JRadioButton Chinesebutton = new JRadioButton("Chinese");
+		final JRadioButton Hindubutton = new JRadioButton("Hindu");
+		final JRadioButton Italianbutton = new JRadioButton("Italian");
+		final JRadioButton Frenchbutton = new JRadioButton("French");
 		JCheckBox checkbox = new JCheckBox("Random order of translation");
 		JPanel parentContainer = new JPanel();
 		JPanel panel = new JPanel(new MigLayout());
@@ -47,51 +49,65 @@ public class Main {
 		frame.add(parentContainer);
 		parentContainer.setLayout(new MigLayout("debug","[] []"," [] [] []"));
 		
-		//radio buttons need to be closer
-		//Remove checkbox
-		panel.add(Russianbutton);
+		panel.add(Spanishbutton);
 		panel.add(Swedishbutton);
 		panel.add(Finnishbutton ,"wrap");
 		panel.add(Germanbutton);
 		panel.add(Chinesebutton);
 		panel.add(Hindubutton,"wrap");
-		panel.add(Irishbutton);
+		panel.add(Italianbutton);
 		panel.add(Frenchbutton,"wrap");
 		panel.add(checkbox,"wrap");
 		button.setSize(30, 30);
 		panel.add(button,"span ,push,grow,wrap");
 		
-		
-		
-		
-		
-		
 		parentContainer.add(label1,"left");
 		parentContainer.add(label2,"wrap");
 		parentContainer.add(input);
 		parentContainer.add(panel,"span,center,wrap");
-		//parentContainer.add(button,;
 		
 		parentContainer.add(label3,"wrap");
-		//output.setBorder(BorderFactory.createEtchedBorder());
 		parentContainer.add(output,"span2 , grow, wrap");
 	
-		
-	
-		
-		//parentContainer.setVisible(true);
 		frame.add(parentContainer,BorderLayout.CENTER);
 		frame.pack();
 		frame.setVisible(true);
 		
-//		Example
-//		Translator translator = new Translator();
-//		String result = translator.Translate("en", "es", "Hello World");
-//		System.out.println(result);
+		button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Translator translator = new Translator();
+				if(Spanishbutton.isSelected()){
+					String result = translator.Translate(Language.ENGLISH.toString(), Language.SPANISH.toString(), input.getText());
+					output.setText(result);
+				}else if(Swedishbutton.isSelected()){
+					String result = translator.Translate(Language.ENGLISH.toString(), Language.SWEDISH.toString(), input.getText());
+					output.setText(result);
+				}else if(Finnishbutton.isSelected()){
+					String result = translator.Translate(Language.ENGLISH.toString(), Language.FINNISH.toString(), input.getText());
+					output.setText(result);
+				}else if(Germanbutton.isSelected()){
+					String result = translator.Translate(Language.ENGLISH.toString(), Language.GERMAN.toString(), input.getText());
+					output.setText(result);
+				}else if(Chinesebutton.isSelected()){
+					String result = translator.Translate(Language.ENGLISH.toString(), Language.CHINESE_SIMPLIFIED.toString(), input.getText());
+					output.setText(result);
+				}else if(Hindubutton.isSelected()){
+					String result = translator.Translate(Language.ENGLISH.toString(), Language.HINDI.toString(), input.getText());
+					output.setText(result);
+				}else if(Italianbutton.isSelected()){
+					String result = translator.Translate(Language.ENGLISH.toString(), Language.ITALIAN.toString(), input.getText());
+					output.setText(result);
+				}else if(Frenchbutton.isSelected()){
+					String result = translator.Translate(Language.ENGLISH.toString(), Language.FRENCH.toString(), input.getText());
+					output.setText(result);
+				}
+			}
+		});
 		
-		//TODO create action listener for translate button
-		//When pressed, get text from textArea, call translator.Translate function for each language (radio button)
-		//Output translated language to bottom textArea
+		//TODO LANGUAGES SPANISH AND FRENCH WORK. LANGUAGE CODES FOR OTHERS DONT WORK
+		//Jazus lads ye did great work there. I must get my finger out...
 	}
 
 }
