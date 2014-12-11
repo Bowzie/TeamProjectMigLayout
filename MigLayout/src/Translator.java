@@ -45,12 +45,10 @@ public class Translator {
 		case "gr":
 			return Language.GERMAN;
 		case "ch":
-			return Language.CHINESE;
+			return Language.CHINESE_SIMPLIFIED;
 		case "hi":
 			return Language.HINDI;
-		case "is":
-			return Language.IRISH;
-			
+
 		}
 		return Language.AUTO_DETECT;
 	}
