@@ -2,8 +2,11 @@ TeamProjectMigLayout: Ali Aris(Admin), James McDonnell, Micheal Burke
 ====================
 
 Ali: Main java functionality and GUI setup.
+
 James: Inital GUI setup and project functionality.
+
 Micheal: Action button functionality and GUI setup.
+
 All: General changes to miglayout GUI and functionality.
 
 At the start of the project all three of us were administrators and could not
