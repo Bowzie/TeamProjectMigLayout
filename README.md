@@ -2,11 +2,11 @@ TeamProjectMigLayout: Ali Aris(Admin), James McDonnell, Micheal Burke
 https://github.com/Bowzie/TeamProjectMigLayout/
 ====================
 
-Ali: Main java functionality and GUI setup.
+Ali (Bowzie) : Main java functionality and GUI setup.
 
-James: Inital GUI setup and project functionality.
+James (Agroman) : Inital GUI setup and project functionality.
 
-Micheal: Action button functionality and GUI setup.
+Micheal (Forza-Milan) : Action button functionality and GUI setup.
 
 All: General changes to miglayout GUI and functionality.
 
